@@ -9,6 +9,8 @@ const{Session}=require("api-ecoledirecte");
 const app=express();
 const server=http.createServer(app);
 const io=socketio(server);
+process.on("unhandledRejection",console.log);
+process.on("rejectionHandled",console.log);
 app.use(express.static(path.join(__dirname,"public"),{extensions:["html"]}));
 app.use(express.json());
 app.use(express.text());
