@@ -9,7 +9,7 @@ const codeVerification=document.getElementById("code-verification");
 const emailError=document.getElementById("error-email");
 const codeError=document.getElementById("error-code");
 var email="";
-const rootURL="http://localhost";
+const rootURL="https://aky-chat.herokuapp.com";
 emailLogin.addEventListener("submit",event=>{
   event.preventDefault();
   email=document.getElementById("email").value;
