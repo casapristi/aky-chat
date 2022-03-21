@@ -30,7 +30,7 @@ const associateEcoledirecte=document.getElementById("associate-ecoledirecte");
 const ecoledirecteError=document.getElementById("ecoledirecte-error");
 const attachmentSelector=document.createElement("input");
 const backgroundSelector=document.createElement("input");
-const rootURL="http://localhost";
+const rootURL="https://aky-chat.herokuapp.com";
 var timeouts=0;
 document.body.scrollTop=document.body.scrollHeight+document.body.clientHeight;
 if(!window.localStorage.getItem("id")){
