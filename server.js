@@ -85,7 +85,7 @@ function generateCode(){
 };
 app.post("/api/verify",(req,res)=>{
   if(!req.body?.length)return res.send({error:"Écris ton addresse email"});
-  // if(toUsername(req.body)==req.body)return res.send({error:"Utilise l'addresse email du lycée"});
+  if(toUsername(req.body)==req.body)return res.send({error:"Utilise l'addresse email du lycée"});
   const code=generateCode();
   nodemailer.createTransport({
     service:"gmail",
