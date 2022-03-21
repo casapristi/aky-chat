@@ -1,0 +1,111 @@
+:root{
+  --app-height:100vh;
+  --primary-color:#2a2a2c;
+  --secondary-color:#1d1d1f;
+  --terciary-color:#101011;
+  --accent-color:#49e744;
+  --text-color:#b8b8b8;
+  --message-sender-thickness:40px;
+}
+*{
+  margin:0;
+  font-family:Arial, Helvetica, sans-serif;
+  color:var(--text-color);
+}
+*[hidden]{
+  opacity:0;
+  position:fixed;
+  pointer-events:none;
+}
+body{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+  background-image:url(../images/default/background.jpg);
+  background-size:cover;
+  background-repeat:none;
+}
+@media not all and (hover:hover) {
+  body{
+    height:var(--app-height);
+  }
+}
+.login-form{
+  background:var(--primary-color);
+  display:flex;
+  flex-direction:column;
+  padding:20px;
+  align-items:center;
+  border-radius:10px;
+  box-shadow:0 0 20px #0005;
+}
+.form-title{
+  padding-bottom:10px;
+  margin-bottom:10px;
+  border-bottom:1px solid var(--text-color);
+  width:100%;
+  font-size:30px;
+  font-weight:700;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+}
+.form-title i{
+  font-size:20px;
+  margin-right:10px;
+}
+.submit-button{
+  width:400px;
+  margin:10px 0;
+  height:50px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  background:var(--accent-color);
+  color:var(--primary-color);
+  font-weight:700;
+  font-size:16px;
+}
+.form-content{
+  padding:20px 0;
+  width:100%;
+}
+.form-input{
+  height:40px;
+  width:calc(100% - 20px * 2);
+  padding:0 20px;
+  font-size:16px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  background:var(--secondary-color);
+}
+.error{
+  color:#f00;
+  font-weight:100;
+}
+.digits{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+  width:100%;
+  margin:20px 0;
+}
+.digit{
+  width:3rem;
+  height:4rem;
+  background:var(--secondary-color);
+  border-radius:10px;
+  outline:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.digit-content{
+  outline:none;
+  font-size:22px;
+  width:3rem;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f47d1d8c26.js" crossorigin="anonymous"></script>
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="js/chat.js"></script>
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="shortcut icon" href="images/default/icon.png" type="image/x-icon">
+    <title>Aky | Chat</title>
+  </head>
+  <body>
+    <div class="image-overlay" id="image-overlay" onclick="this.hidden=true;" hidden>
+      <div class="image-container">
+        <img alt="image" id="main-image" class="main-image">
+        <p class="file-details" id="file-info"></p>
+      </div>
+    </div>
+    <div class="display-attachments" id="display-attachments" hidden>
+      <p class="attachments-title"><i class="fas fa-link"></i> Pièces jointes</p>
+    </div>
+    <div class="ecoledirecte-login" id="ecoledirecte-login" hidden>
+      <form id="ecoledirecte-login-form" class="ecoledirecte-login-form">
+        <p class="form-title">Connexion à EcoleDirecte</p>
+        <div class="form-data">
+          <input
+            type="text"
+            id="id-ecoledirecte"
+            class="form-field"
+            placeholder="Identifiant"
+          >
+          <input
+            type="password"
+            id="password-ecoledirecte"
+            class="form-field"
+            placeholder="Mot de passe"
+          >
+          <div class="show-password">
+            <input type="checkbox" id="show-password">
+            <label class="show-password-text">Afficher le mot de passe</label>
+          </div>
+        </div>
+        <button type="submit" class="login-button">Se Connecter</button>
+        <p id="ecoledirecte-error" class="error"></p>
+      </form>
+    </div>
+    <main class="page-content">
+      <div class="sidebar">
+        <div class="members">
+          <div class="member-container" id="online-members"></div>
+          <div class="member-container" id="offline-members"></div>
+        </div>
+        <div class="user-infos">
+          <div class="user-data">
+            <div class="avatar-field">
+              <img id="user-avatar" alt="user-avatar" class="user-avatar">
+              <input type="file" class="image-selector" id="image-selector" accept="image/*">
+            </div>
+            <div class="user-textual-infos">
+              <p class="username" id="username"></p>
+            </div>
+          </div>
+          <button id="settings" class="settings-icon" onclick="document.getElementById('settings-menu').hidden=!document.getElementById('settings-menu').hidden">
+            <i class="fas fa-ellipsis-v"></i>
+          </button>
+          <div class="settings-menu" id="settings-menu" hidden>
+            <div class="settings-items">
+              <a id="edit-background" class="settings-item">
+                <i class="fas fa-image"></i>
+                <p class="category-title">Fond d'écran</p>
+              </a>
+              <a id="associate-ecoledirecte" class="settings-item">
+                <i class="fas fa-school"></i>
+                <p class="category-title">Associer à EcoleDirecte</p>
+              </a>
+              <a id="disconnect" class="settings-item" onclick="window.localStorage.clear();window.location.reload();">
+                <i class="fas fa-sign-out-alt"></i>
+                <p class="category-title">Se déconnecter</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="messages-manager" id="messages-manager">
+        <div class="message-container" id="message-container"></div>
+        <form id="send-container" class="send-container">
+          <input
+            type="text"
+            id="message-input"
+            class="message-input"
+            placeholder="Envoyer un message..."
+            spellcheck="false"
+            autocomplete="off"
+            maxlength="2048"
+          >
+          <button type="submit" class="send-button" id="send-message-button">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+          <button type="button" class="send-button" id="uplaod-file-button">
+            <i class="fas fa-link"></i>
+          </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

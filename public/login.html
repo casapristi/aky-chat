@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://kit.fontawesome.com/f47d1d8c26.js" crossorigin="anonymous"></script>
+    <script defer src="js/login.js"></script>
+    <title>Aky | Login</title>
+    <link rel="shortcut icon" href="images/default/icon.png" type="image/x-icon">
+  </head>
+  <body>
+    <main class="login-content">
+      <form id="email-login" class="login-form">
+        <label class="form-title"><i class="fas fa-user"></i>Enregistrement par email</label>
+        <div class="form-content">
+          <input
+            id="email"
+            type="email"
+            placeholder="x.xxxxxx@classestaspais.fr"
+            class="form-input"
+            autocomplete="email"
+          ></input>
+        </div>
+        <button type="submit" class="submit-button">Envoyer l'email</button>
+        <p class="error" id="error-email"></p>
+      </form>
+      <div id="code-verification" class="login-form" hidden>
+        <label class="form-title"><i class="fas fa-shield-alt"></i>Code de verification</label>
+        <div class="digits">
+          <div class="digit">
+            <div id="digit-1" class="digit-content" contenteditable="true" oninput="next(this)"></div>
+          </div>
+          <div class="digit"><div id="digit-2" class="digit-content" oninput="next(this)"></div></div>
+          <div class="digit"><div id="digit-3" class="digit-content" oninput="next(this)"></div></div>
+          <div class="digit"><div id="digit-4" class="digit-content" oninput="next(this)"></div></div>
+          <div class="digit"><div id="digit-5" class="digit-content" oninput="next(this)"></div></div>
+          <div class="digit"><div id="digit-6" class="digit-content" oninput="verify(this)"></div></div>
+        </div>
+        <button class="submit-button" oninput="verify(document.getElementById(code))">Vérifier le code</button>
+        <p class="error" id="error-code"></p>
+      </div>
+    </main>
+  </body>
+</html>
